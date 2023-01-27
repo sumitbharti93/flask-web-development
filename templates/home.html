@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask web development</title>
-</head>
-<body>
-    <h1>
-        Home page 
-    </h1>
-
+{% extends "layout.html" %}
+{% block content %}
     {% for post in posts %}
         <h1>{{ post.title}}</h1>
         <p>By {{ post.author}} on {{post.date_posted}}</p>
         <p>{{post.content}}</p>
     {% endfor %}
-</body>
-</html></html>
+{% endblock content %} 
+<!-- name of the block at  endblock section is optional but it ois preferrable to write to avoid confusion so that we will get to know which block we are ending. It avoids confusion when we are using multiple blocks-->
